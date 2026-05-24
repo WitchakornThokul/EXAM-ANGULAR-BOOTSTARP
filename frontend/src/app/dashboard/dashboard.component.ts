@@ -89,7 +89,13 @@ export class DashboardComponent implements OnInit {
       return;
     }
 
-    this.loadData();
+    const user = this.authService.getCurrentUser();
+    if (user?.role === 'admin') {
+      this.router.navigateByUrl('/dashboard/admin');
+      return;
+    }
+
+    this.router.navigateByUrl('/dashboard/customer');
   }
 
   loadData(): void {

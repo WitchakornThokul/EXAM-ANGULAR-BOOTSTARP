@@ -26,4 +26,12 @@ export class ApiService {
   register(payload: { username: string; email: string; password: string }) {
     return this.http.post<{ status: string; message?: string }>(`${this.baseUrl}/register.php`, payload);
   }
+
+  adminStats() {
+    return this.http.get<{ status: string; kpis: any; action_orders: any[]; recent_reviews: any[] }>(`${this.baseUrl}/admin_stats.php`);
+  }
+
+  customerDashboard(username: string) {
+    return this.http.post<{ status: string; user: any; status_counts: any; recent_orders: any[]; coupons: any[]; cart_count: number; recommended: any[] }>(`${this.baseUrl}/customer_dashboard.php`, { username });
+  }
 }
