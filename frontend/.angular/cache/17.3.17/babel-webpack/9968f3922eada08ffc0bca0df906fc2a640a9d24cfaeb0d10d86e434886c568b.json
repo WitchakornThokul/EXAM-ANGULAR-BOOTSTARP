@@ -1,0 +1,1 @@
+{"ast":null,"code":"import 'zone.js';\nimport { bootstrapApplication } from '@angular/platform-browser';\nimport { appConfig } from './app/app.config';\nimport { AppComponent } from './app/app.component';\nbootstrapApplication(AppComponent, appConfig).catch(error => console.error(error));","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
